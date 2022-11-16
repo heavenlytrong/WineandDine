@@ -9,10 +9,11 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <!-- jQuery UI <link> tag -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="" />
     <title>Meal and Cocktail Finder</title>
 </head>
 <body>
+    <!-- Webpage Header starts here-->
   <header>
     <div>
 <h1>Meal and Cocktail Finder</h1>
@@ -20,13 +21,71 @@
 <p>Use this app to figure it out with ingredients on hand</p>
 </div>
   </header> 
+    
+    <!-- Meal search and recipe option list starts here -->
+  <div class="container">
+    <section class="row">
+        <div class = "col-3">
+        <h2>What Meal ingredient do you have?</h2>
+  <div class="input-group mb-3 col-3">
+    <input type="text" class="form-control" id="cocktail" placeholder="cocktail ingredient" aria-label="cocktail ingredient search">
+</div>
+<div class="d-grid gap-2 col-3 mx-auto">
+    <button type="button" class="btn btn-primary" id="saveBtnCocktail">Search</button>
+    <li>cocktail option 1</li>
+    <li>cocktail option 2</li>
+    <li>cocktail option 3</li>
+    <li>cocktail option 4</li>
+    <li>cocktail option 5</li>
+    <li>cocktail option 6</li>
+</div>
+</div>
+<!-- Div for "serve with"-->
+<div class="d-grid gap-2 col-3 mx-auto">
+<h2>serve with</h2>
+</div>
+<!-- cocktail search and recipe option list starts here -->
+<div class = "col-3">
+    <h2>What meal ingredient do you have?</h2>
+  <div class="input-group mb-3 col-3">
+    <input type="text" class="form-control" id="meals" placeholder="meal ingredient" aria-label="food ingredient search">
+</div>
+<div class="d-grid gap-2 col-3 mx-auto">
+    <button type="button" class="btn btn-primary" id="saveBtnMeal">Search</button>
+    <li>meal option 1</li>
+    <li>meal option 2</li>
+    <li>meal option 3</li>
+    <li>meal option 4</li>
+    <li>meal option 5</li>
+    <li>meal option 6</li>
+</div>
 
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" id="meals" placeholder="Name of city" aria-label="">
-</div>
-<div class="d-grid gap-2 col-12 mx-auto">
-    <button type="button" class="btn btn-primary" id="saveBtn">Search</button>
-</div>
+
+<!-- Card for meal recipe -->
+<div class="card col-9 mt-4 border-0">
+    <div class="card body">
+        <h2 class="card-title d-flex align-items-center fw-bold mx-2 fs-1">           
+            <span class="px-5" id="recipeSelect"></span>
+            <img class="mealSelect" id="mealImg" src=""></img>
+            Title of Meal Recipe
+        </h2>
+        <p class="card-text mx-2 fs-2">akslkjt;lehalkjdlkjelkjeljekljakdjthejhals</p>
+           
+    </div>
+
+    <!-- Card for cocktail recipe-->
+    <div class="card col-9 mt-4 border-0">
+        <div class="card">
+            <h2 class="card-title d-flex align-items-center fw-bold mx-2 fs-1">           
+                <span class="px-5" id="recipeSelect"></span>
+                <img class="cocktailSelect" id="cocktailImg" src=""></img>
+                Title of Cocktail Recipe
+            </h2>
+            <p class="card-text mx-2 fs-2">blahalslajdljaldkjflajdflajfljlasjflskjflskj</p>               
+        </div>
+        </div>
+    </section>
+
   
 
 
@@ -47,6 +106,6 @@
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
       <!-- jQuery UI <script> tag -->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="./assets/script.js"></script>
+        <script src=""></script>
 </body>
 </html>
