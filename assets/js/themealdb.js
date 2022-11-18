@@ -1,11 +1,16 @@
-const app = document.getElementById('root');
+const ingredient = document.getElementById('meal');
+const g
+const
+const
+const
 
-const container = document.createElement('div')
-container.setAttribute('class', 'container');
+searchBtn.addEventListener('click', getDinnerIdea);
 
-app.appendChild(container); = new XMLHttpRequest();
-request.open('GET' 'https://', true);
-request.onload = function (){
-    
-}
-
+function getDinnerIdea(){
+    let searchData = document.getElementById
+    ('search-data').value.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
