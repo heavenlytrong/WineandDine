@@ -1,1 +1,28 @@
-hello
+button #searchBtnMeal{
+    border-radius: 500px;
+    border: solid black;
+}
+
+h2 {
+    font-weight: bold;
+    margin: 50px;
+}
+
+h1{
+    font-weight: bolder;
+    margin-top: auto;
+    margin-bottom: 30px;
+    background-color: gray;
+    height: 120px;
+    text-align: center;
+    font-family:'Bebas Neue', cursive, sans-serif;
+    font-size: 100px;
+    font-style: italic;
+    width: 600px;
+    margin-left: 40%;
+    border: solid black;
+    padding-right: 50px;
+    color: white;
+    border-radius: 30px;
+}
+
