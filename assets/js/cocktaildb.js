@@ -512,3 +512,5 @@ function extractData(staticResponse) {
 }
 
 getData(drink);
+
+
