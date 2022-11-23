@@ -543,18 +543,41 @@ function displayData() {
         const propertyValue = Object.values(staticResponseIngredient['drinks'][0]);
         const newIngredients = (propertyValue.slice(17,32));
         const newMeasurements = (propertyValue.slice(33,48));
+        
         console.log(newMeasurements);
         console.log(newIngredients);
+        const ingredientsArray = []
+        for (let i = 1; i < 16; i++) {
+            let ingredient = ingredients["strIngredient" + i]
+            let measure = ingredients["strMeasure" + i]
+            if (!ingredient) {
+                break
+            }
+            if (!measure) {
+                measure = ""
+            }
+            let ingredientObj = {ingredient,measure}
+            ingredientsArray.push(ingredientObj)
+        }
         
+        console.log(ingredientsArray)
         //if (newIngredients.)
-
-
-    document.getElementById('cocktailTitle').innerHTML += "<p>" + randomEntry['strDrink'] + "</p>";
-    document.getElementById('cocktailIng').innerHTML += "<p>" + newIngredients + "</p>";
+    document.getElementById('cocktailTitle').innerHTML += "<p>" + randomEntry['strDrink'] + "</p>";  
+        $("#cocktailIng").html('')
+       for (let i = 0; i < ingredientsArray.length; i++) {
+            var entry = ingredientsArray[i]
+            var listItem = $("<li>")
+            .text(entry.ingredient + entry.measure)
+            .addClass("card-text")            
+            $("#cocktailIng").append(listItem)            
+        }
+    
+ 
+   // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
     document.getElementById('cocktailIns').innerHTML += "<p>" + ingredients['strInstructions'];
     document.getElementById('cocktailImg').src = randomEntry['strDrinkThumb']; 
     
-}  
+}
 
 getData(drink);
 displayData();
