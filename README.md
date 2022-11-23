@@ -7,17 +7,25 @@ The Wine and Dine webpage allows users to randomly generate a food recipe and co
 ## User Story
 
 As an indecisive and hungry person
+
 I want to discover new recipes with an ingredient I have on hand
+
 So that I make delicious food and a cocktail to enjoy
 
 ## Acceptance Criteria **need to make sure this is actually what will/is happening**
 
 Given I am a user that wants to find food and cocktail recipes
+
 When I enter a food ingredient I have on hand
+
 Then I am presented with a randomly generated food recipe and that receipe is added to the search history
+
 When I enter a cocktail ingredient I have on hand
+
 Then I am presented with a randomly generated cocktail receipe and that recipe is added to the search history
+
 When I click on a previously searched recipe
+
 Then I am again presented with the recipe ingredients and directions to make it
 
 ## Installation **add in link once deployed**
@@ -33,15 +41,21 @@ To use, click on the link:
 HTML5, CSS, BootStrap, GoogleFonts, JavaScript, and JQuery
 
 API's
+
 The MealDB: https://www.themealdb.com/api.php
+
 The CocktailDB: https://www.thecocktaildb.com/api.php
 
 ## Collaborators
 
 Trong: CSS
+
 John: JavaScript
+
 Jacob: JavaScript
+
 Katie: HTML, README
+
 All: Concept design
 
 ## Future Development
