@@ -464,16 +464,25 @@ var staticResponseDrink = {
     ]
 }
 var staticResponseIngredient = {"drinks":[{"idDrink":"16984","strDrink":"Radioactive Long Island Iced Tea","strDrinkAlternate":null,"strTags":null,"strVideo":null,"strCategory":"Ordinary Drink","strIBA":null,"strAlcoholic":"Alcoholic","strGlass":"Collins Glass","strInstructions":"Pour all ingredients over ice in a very tall glass. Sip cautiously.","strInstructionsES":null,"strInstructionsDE":"Alle Zutaten in einem sehr hohen Glas \u00fcber Eis gie\u00dfen. Vorsichtig nippen.","strInstructionsFR":null,"strInstructionsIT":"Versare tutti gli ingredienti sul ghiaccio in un bicchiere molto alto.\r\nSorseggia con cautela.","strInstructionsZH-HANS":null,"strInstructionsZH-HANT":null,"strDrinkThumb":"https:\/\/www.thecocktaildb.com\/images\/media\/drink\/rdvqmh1503563512.jpg","strIngredient1":"Rum","strIngredient2":"Vodka","strIngredient3":"Tequila","strIngredient4":"Gin","strIngredient5":"Triple sec","strIngredient6":"Chambord raspberry liqueur","strIngredient7":"Midori melon liqueur","strIngredient8":"Malibu rum","strIngredient9":null,"strIngredient10":null,"strIngredient11":null,"strIngredient12":null,"strIngredient13":null,"strIngredient14":null,"strIngredient15":null,"strMeasure1":"1 oz ","strMeasure2":"1 oz ","strMeasure3":"1 oz ","strMeasure4":"1 oz ","strMeasure5":"1 oz ","strMeasure6":"1 oz ","strMeasure7":"1 oz ","strMeasure8":"1 oz ","strMeasure9":null,"strMeasure10":null,"strMeasure11":null,"strMeasure12":null,"strMeasure13":null,"strMeasure14":null,"strMeasure15":null,"strImageSource":null,"strImageAttribution":null,"strCreativeCommonsConfirmed":"No","dateModified":"2017-08-24 09:31:52"}]}
-
 var drink = 'Gin'
 var APIStringDrink = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='
 var APIStringId = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
+var drinkId = ""
+var drinkPic = ""
+var drinkStr = ""
+var drinks = []
+var ingredients = []
+var updatedIngredients = []
+var updatedMeasurements = []
+var propertyValue = []
+var instructions = []
+var ingredientsArray = ingredientsArray
 
 
 
 
 function getData(drink) {
-    APIStringDrink = APIStringDrink.replace('[key]', drink);
+    //APIStringDrink = APIStringDrink.replace('[key]', drink);
 
     var requestOptions = {
         method: 'GET',
@@ -487,47 +496,95 @@ function getData(drink) {
 
 }
 
-//function getDataId(drinkId) {
-    //APIStringId = APIStringId.replace('[key]', drinkId);
-   // console.log(APIStringId.replace('[key]', drinkId))
-   // var requestOptions = {
-    //    method: 'GET',
-    //    redirect: 'follow'
-   //   };
-      
-    //  fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=", requestOptions)
-   //     .then(response => response.text())
-   //     .then(result => console.log(result))
-   //     .catch(error => console.log('error', error));
+function extractData(staticResponseDrink) {
 
-//}   
-
-
-
-function extractData(staticResponseIngredient) {
-
-   const drinks = staticResponseIngredient['drinks']
+    drinks = staticResponseDrink['drinks']
     var randomEntry = drinks[Math.floor(Math.random() * drinks.length)];
     console.log(randomEntry['strDrink']);
     console.log(randomEntry['strDrinkThumb']);
- 
+    console.log(randomEntry['idDrink']);
+    drinkId = randomEntry['idDrink'];
+    drinkPic = randomEntry['strDrinkThumb'];
+    drinkStr = randomEntry['strDrink'];
+    console.log(drinkId)
+    getDataId(drinkId)
+
+    
 }
 
+function getDataId(drinkId) {
+    console.log(drinkId)
+    //APIStringId = APIStringId.replace('[key]', drinkId); 
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      fetch(APIStringId + drinkId, requestOptions)
+        .then(response => response.text())
+        .then(result => extractDataId(JSON.parse(result)))
+        .catch(error => console.log('error', error));
+        //console.log(APIStringId + drinkId, requestOptions)
+      
+}   
+
+function extractDataId(staticResponseIngredient) {
+
+        /*var ingredients = staticResponseIngredient['drinks'][0];
+        var propertyValue = Object.values(staticResponseIngredient['drinks'][0]);
+        var newIngredients = (propertyValue.slice(17,32));
+        var newMeasurements = (propertyValue.slice(32,48));*/
+        ingredients = staticResponseIngredient['drinks'][0];
+        propertyValue = Object.values(staticResponseIngredient['drinks'][0]);
+        newIngredients = (propertyValue.slice(17,32));
+        updatedIngredients = newIngredients.join(', ');
+        newMeasurements = (propertyValue.slice(32,47));
+        //updatedMeasurements = newMeasurements.join(', ');
+        //console.log(updatedMeasurements)
+        instructions = propertyValue[9];
+        /*console.log(ingredients)
+        console.log(propertyValue)
+        console.log(newIngredients)
+        console.log(newMeasurements)
+        console.log(instructions)*/
+        ingredientsArray = []
+    
+    for (let i = 1; i < 16; i++) {
+        let ingredient = ingredients["strIngredient" + i]
+        let measure = ingredients["strMeasure" + i]
+
+        if (!ingredient) {
+            break
+        }
+        if (!measure) {
+            measure = ""
+        }
+        const ingredientObj = {ingredient,measure}
+        ingredientsArray.push(ingredientObj)
+
+    } 
+    console.log(ingredientsArray)
+
+
+        displayData(staticResponseIngredient)
+};
+
+
 function displayData() {
-   
-    const drinks = staticResponseDrink['drinks'];
+    
+    
+    /*const drinks = staticResponseDrink['drinks'];
     var randomEntry = drinks[Math.floor(Math.random() * drinks.length)];
-    var drinkId = randomEntry['idDrink'];
+    let drinkId = randomEntry['idDrink'];
     console.log(randomEntry)
-    console.log(drinkId);
+    //console.log(drinkId);
 
 
+    */
 
-
-
+   
  
     
-    var requestOptions = {
+    /*var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
@@ -543,6 +600,7 @@ function displayData() {
         const propertyValue = Object.values(staticResponseIngredient['drinks'][0]);
         const newIngredients = (propertyValue.slice(17,32));
         const newMeasurements = (propertyValue.slice(33,48));
+
         
         console.log(newMeasurements);
         console.log(newIngredients);
@@ -576,8 +634,10 @@ function displayData() {
    // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
     document.getElementById('cocktailIns').innerHTML += "<p>" + ingredients['strInstructions'];
     document.getElementById('cocktailImg').src = randomEntry['strDrinkThumb']; 
+
     
 }
 
 getData(drink);
+getDataId(drinkId);
 displayData();
