@@ -3,6 +3,7 @@ h2 {
     font-weight: bold;
     margin: 50px;
     font-family: 'Bebas Neue', cursive, sans-serif;
+  text-align: center;
 }
 
 h1{
@@ -13,16 +14,17 @@ h1{
     height: 120px;
     text-align: center;
     font-family:'Bebas Neue', cursive, sans-serif;
-    font-size: 100px;
     font-style: italic;
-    width: 600px;
-    margin-left: 40%;
+    font-size: 100px;
+    width: 1000px;
+    margin-left: 35%;
     border: 2px, solid black;
     padding-right: 50px;
     color: white;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     box-shadow: 20px 30px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: 5px;
     
 }
 
