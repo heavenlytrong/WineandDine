@@ -1,6 +1,7 @@
 /*Katie added JIC*/
 body {
-  background-color: rgb(0, 149, 133)
+  /*background-color: rgb(0, 149, 133)*/
+background-color: white;
 }
 /*Katie added JIC*/
 nav {
@@ -35,7 +36,7 @@ h1{
     font-family:'Bebas Neue', cursive, sans-serif;
     font-style: italic;
     width: 600px;
-    margin-left: 37%;
+    margin-left: 40%;
     border: 2px, solid black;
     padding-right: 40px;
     color: white;
@@ -43,6 +44,7 @@ h1{
     border-bottom-left-radius: 30px;
     box-shadow: 20px 30px 10px rgba(0, 0, 0, 0.1);
     letter-spacing: 5px;
+    font-size: 100px;
     
 }
 /*Katie added JIC*/
@@ -50,6 +52,15 @@ h1{
   text-align: center;
   font-weight: bold;
   font-size: 35px;
+  background-color: rgb(201, 195, 195);
+  margin-left: 41%;
+  width: 550px;
+  height: 100px;
+  color: white;
+  box-shadow: 20px 30px 10px rgba(0, 0, 0, 0.1);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-top: -30px;
 }
 /*Katie added JIC*/
 #Hline2 {
@@ -68,7 +79,7 @@ button {
     font-weight: 500;
     color: #000;
     background-color: #fff;
-    border: none;
+    border: .01px  solid black;
     border-radius: 45px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
@@ -91,3 +102,4 @@ button {
   font-size: 50px;
   font-family: 'Bebas Neue', cursive, sans-serif;
 }
+
