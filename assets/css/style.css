@@ -150,4 +150,12 @@ ul #cocktailMea {
   margin-top: 20px;
 }
 
+  /*Katie added for favorite star*/
+  #favBtn {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
 
