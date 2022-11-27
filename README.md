@@ -36,7 +36,7 @@ To use, click on the link:
 
 ## Credits
 
-Jake 
+Jake Pedigo - JavaScript for ingredients from API
 
 ## Technologies used
 

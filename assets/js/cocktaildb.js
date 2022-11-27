@@ -625,7 +625,9 @@ function displayData() {
         $("#cocktailIng").append(listItem)
         }
         //Katie - added local storage to pull in drink ID
-        localStorage.setItem('strDrink', JSON.stringify(randomEntry));
+        //var savedEntryArray = []        
+        //savedEntryArray.push(drinkStr)
+        //localStorage.setItem('strDrink', JSON.stringify(savedEntryArray));
 
     // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
     document.getElementById('cocktailIns').innerHTML += "<p>" + ingredients['strInstructions'];
