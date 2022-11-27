@@ -11,6 +11,7 @@ nav {
   font-size: 20px;
   box-shadow:20px 15px 10px rgba(0, 0, 0, 0.1);
   margin-top: -20px;
+  border-bottom: 1px black solid;
 }
 /*Katie added JIC*/
 nav a {
@@ -24,7 +25,7 @@ nav a {
 }
 nav a:hover {
   cursor: pointer;
-  font-size: 40px;
+  font-size: 35px;
   color: black;
 }
 
@@ -33,6 +34,7 @@ h2 {
     margin: 50px;
     font-family: 'Bebas Neue', cursive, sans-serif;
   text-align: center;
+  font-style: italic;
 }
 
 h1{
@@ -95,9 +97,9 @@ button {
     }
   
   button:hover {
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 15px 20px rgba(153, 179, 59, 0.4);
-    color: #fff;
+    color: rgb(0, 0, 0);
     transform: translateY(-7px); 
     
   }
@@ -144,14 +146,8 @@ ul #cocktailMea {
   font-size: 50px;
 }
 
-/*Katie added for favorite star*/
-#favBtn {
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
+#historyBrk {
+  margin-top: 20px;
 }
-
 
 
