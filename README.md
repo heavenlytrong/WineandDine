@@ -36,6 +36,8 @@ To use, click on the link:
 
 ## Credits
 
+Jake 
+
 ## Technologies used
 
 HTML5, CSS, BootStrap, GoogleFonts, JavaScript, and JQuery
