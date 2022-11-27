@@ -26,7 +26,7 @@ Then I am presented with a randomly generated cocktail receipe
 
 Then I can click on the favorite star to add to the favorites list
 
-When I click on a favorite recipe
+When I click on a favorited recipe
 
 Then I am again presented with the recipe ingredients and directions to make it
 
