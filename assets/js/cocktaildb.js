@@ -478,8 +478,14 @@ var propertyValue = []
 var instructions = []
 var ingredientsArray = ingredientsArray
 
-
-
+//Katie - submit button event listener
+var cocktailBtn = $("#searchBtnCocktail")
+cocktailBtn.on("click", function (event) {
+    event.preventDefault
+    var drink = $("#cocktail").val();
+    getData(drink)
+    $("#cocktail").val('');
+})
 
 function getData(drink) {
     //APIStringDrink = APIStringDrink.replace('[key]', drink);
@@ -497,7 +503,6 @@ function getData(drink) {
 }
 
 function extractData(staticResponseDrink) {
-
     drinks = staticResponseDrink['drinks']
     var randomEntry = drinks[Math.floor(Math.random() * drinks.length)];
     console.log(randomEntry['strDrink']);
@@ -508,8 +513,6 @@ function extractData(staticResponseDrink) {
     drinkStr = randomEntry['strDrink'];
     console.log(drinkId)
     getDataId(drinkId)
-
-
 }
 
 function getDataId(drinkId) {
@@ -628,6 +631,6 @@ function displayData() {
 
 }
 
-getData(drink);
+
 getDataId(drinkId);
 displayData();
