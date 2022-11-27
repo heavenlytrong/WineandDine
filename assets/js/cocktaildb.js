@@ -584,7 +584,7 @@ function displayData() {
    
  
     
-    /*var requestOptions = {
+    var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
