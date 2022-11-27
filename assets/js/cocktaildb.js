@@ -577,6 +577,7 @@ function displayData() {
     let drinkId = randomEntry['idDrink'];
     console.log(randomEntry)
     console.log(drinkId);
+    
 
     var requestOptions = {
         method: 'GET',
@@ -622,8 +623,9 @@ function displayData() {
             .text(entry.ingredient + entry.measure)
             .addClass("card-text")
         $("#cocktailIng").append(listItem)
-    }
-
+        }
+        //Katie - added local storage to pull in drink ID
+        localStorage.setItem('strDrink', JSON.stringify(randomEntry));
 
     // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
     document.getElementById('cocktailIns').innerHTML += "<p>" + ingredients['strInstructions'];
