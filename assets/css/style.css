@@ -94,6 +94,7 @@ button {
     cursor: pointer;
     outline: none;
     margin-left: 230px;
+
     }
   
   button:hover {
@@ -150,4 +151,10 @@ ul #cocktailMea {
   margin-top: 20px;
 }
 
+#meal {
+  border-radius: 30px;
+}
 
+#cocktail {
+  border-radius: 30px;
+}
