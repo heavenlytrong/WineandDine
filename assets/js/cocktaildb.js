@@ -467,6 +467,7 @@ var staticResponseIngredient = {"drinks":[{"idDrink":"16984","strDrink":"Radioac
 var drink = 'Gin'
 var APIStringDrink = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='
 var APIStringId = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
+var APIStringName = ''
 var drinkId = ""
 var drinkPic = ""
 var drinkStr = ""
@@ -514,10 +515,16 @@ function getData(drink) {
 
 }
 
-function extractData(staticResponseDrink) {
+function extractData(staticResponseDrink, opt=0) {
 
     drinks = staticResponseDrink['drinks']
-    var randomEntry = drinks[Math.floor(Math.random() * drinks.length)];
+    var randomEntry = []
+    if (opt==0) {
+        randomEntry = drinks[Math.floor(Math.random() * drinks.length)];
+    } else {
+        var randomEntry = drinks[0];
+    }
+
     console.log(randomEntry['strDrink']);
     console.log(randomEntry['strDrinkThumb']);
     console.log(randomEntry['idDrink']);
@@ -572,27 +579,48 @@ function extractDataId(staticResponseIngredient) {
     console.log(ingredientsArray)
 
 
-        displayData(staticResponseIngredient)
+    displayData(staticResponseIngredient)
 };
 
-console.log(ingredientsArray)
+function getDataName(drinkName) {
+  APIStringName = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      console.log(APIStringName + drinkName)
+
+      fetch(APIStringName + drinkName, requestOptions)
+        .then(response => response.text())
+        .then(result => extractData(JSON.parse(result), 1))
+        .catch(error => console.log('error', error));
+
+      
+
+}
+
+
+
+
+
+
 function displayData() {
     
-
-
     $("#cocktailIng").html('')
     for (let i = 0; i < ingredientsArray.length; i++) {
         var entry = ingredientsArray[i]
         var listItem = $("<li>")
             .text(entry.ingredient + " : " + entry.measure)
-            .addClass("card-text")
+            .addClass("card-text, ingMeas")
         $("#cocktailIng").append(listItem)
         }
 
 
     // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
     
-    console.log(ingredientsArray)
+   
 
     document.getElementById('cocktailTitle').innerHTML += "<p>" + drinkStr + "</p>";
     document.getElementById('cocktailIns').innerHTML += "<p>" + instructions + "</p>";
@@ -600,10 +628,70 @@ function displayData() {
     
 }  
 
+var cocktailSaveBtn = $("#cocktailFav")
+cocktailSaveBtn.on("click", function (event) {
+    let prevDrinks = localStorage.getItem("drinks");
+    if (prevDrinks != null) {
+        prevDrinks = JSON.parse(prevDrinks)
+        if(!prevDrinks.includes(String(drinkStr).toLowerCase())) {
+            prevDrinks.push(String(drinkStr).toLowerCase());
+            createResultButton(String(drinkStr).toLowerCase());
+        }
+        localStorage.setItem("drinks", JSON.stringify(prevDrinks))
+    } else {
+        prevDrinks = []
+        prevDrinks.push(String(drinkStr).toLowerCase())
+        createResultButton(String(drinkStr).toLowerCase());
+        localStorage.setItem("drinks", JSON.stringify(prevDrinks))
+    }
+
+    
+    
+})
+
+function createResultButton(drinkStr) {
+    var favList = document.getElementById('searchHistory');
+    var newButton = document.createElement('button', id='favBtn') 
+    favList.append(newButton);
+    newButton.innerText = drinkStr;
+
+    newButton.addEventListener('click', () => {
+        event.preventDefault
+        document.getElementById('cocktailTitle').innerHTML = "Cocktail:";
+        $("#cocktailIng").html('')
+        document.getElementById('cocktailIns').innerHTML = "Instructions:";
+        document.getElementById('cocktailImg').src = "";
+        document.getElementById('cocktailIng').innerHTML
+        getDataName(newButton.innerText)
+    })
+}
+
+
+
+
+console.log(document.getElementById("favBtn"))
+//prevDrinks = JSON.parse(localStorage.getItem(['Key']))
+
+
+/*function createFavoriteButton(cocktailSaveBtn) {
+    let favoriteList = document.getElementById("searchHistory")
+    var cocktailSaveBtn = $("#cocktailFav")
+    let btnElement = document.createElement("button", id="resultBtn")
+    document.getElementById("resultBtn")
+    favoriteList.append(btnElement)
+
+}*/
+
 getData(drink);
 getDataId(drinkId);
 displayData();
 
+prevDrinks = JSON.parse(localStorage.getItem("drinks"));
+if(prevDrinks != null) {
+    for (let i = 0; i < prevDrinks.length; i++) {
+        createResultButton(prevDrinks[i])
+    }
+}
 
 
 
