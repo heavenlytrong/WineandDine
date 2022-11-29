@@ -562,22 +562,7 @@ function extractDataId(staticResponseIngredient) {
         instructions = propertyValue[9];
         ingredientsArray = []
     
-    for (let i = 1; i < 16; i++) {
-        let ingredient = ingredients["strIngredient" + i]
-        let measure = ingredients["strMeasure" + i]
-
-        if (!ingredient) {
-            break
-        }
-        if (!measure) {
-            measure = ""
-        }
-        const ingredientObj = {ingredient,measure}
-        ingredientsArray.push(ingredientObj)
-
-    } 
-    console.log(ingredientsArray)
-
+    
 
     displayData(staticResponseIngredient)
 };
