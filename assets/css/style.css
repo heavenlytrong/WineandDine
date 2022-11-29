@@ -158,6 +158,20 @@ ul #cocktailMea {
     padding: 0;
     background: transparent;
     box-shadow: none;
+    margin-left: 80%;
+  }
+
+  #cocktailFav {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+   margin-left: 80%;
+  }
+
+  #cocktailFav:active {
+    background-color: #000;
   }
 
 #cocktail {
