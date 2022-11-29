@@ -69,7 +69,9 @@ Build out of searched recipes to do a weekly meal plan
 
 
 
+![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_31_43 PM](https://user-images.githubusercontent.com/106408898/204439576-00488282-3c83-4610-b5b5-0dde8b3e7894.png)
 
 
+![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_32_01 PM](https://user-images.githubusercontent.com/106408898/204439568-3d3295e0-5063-4ea8-890e-1eef1867d91a.png)
 
   
