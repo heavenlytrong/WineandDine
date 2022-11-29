@@ -1,6 +1,0 @@
-// Food section
-
-
-
-
-//Drinks section
