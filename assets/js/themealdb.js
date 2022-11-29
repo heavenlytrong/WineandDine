@@ -28,16 +28,38 @@ function getDinnerIdea(e){
         // console.log(mealData)
         let mealTitle = selectedMeal.strMeal;
         let mealSource = selectedMeal.strMealThumb;
-        let mealIns = selectedMeal.idMeal;
-        let mealIng = selectedMeal.strIngredient;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${selectedMeal.idMeal}`)
         .then((response) => response.json())
-        .then(data => {
+        .then(data =>{
+            //let mealIns = data.meals[strInstructions];
             document.getElementById("mealTitle").innerHTML = `Meal : ${mealTitle}`
             document.getElementById("mealImg").setAttribute("src", mealSource)
-            document.getElementById("mealIns").innerHTML = `Instructions : ${mealIns}`
-            document.getElementById("mealIng").innerHTML = `Recipe ingredients : ${mealIng}`
-            console.log(data)            
+
+           // document.getElementById("mealIns").innerHTML = "<p>" + data.meals[strInstructions] + "</p>";
+           
+          $("#mealIns").html(data.meals[0].strInstructions);
+          
+          
+          
+          for (let i = 1; i < 21; i++) {
+            let ingredientM = data.meals[0]["strIngredient" + i]
+            let measureM = data.meals[0]["strMeasure" + i]
+    console.log(ingredientM)
+    console.log(measureM)
+            if (!ingredientM) {
+                break
+            }
+            if (!measureM) {
+                measureM = ""
+            }
+            var listItem = $("<li>")
+                .text(ingredientM + " : " + measureM)
+                .addClass("card-text, ingMeas")
+            $("#mealIng").append(listItem)
+                
+        }        
+                       console.log(data)
+
         })
     })           
    

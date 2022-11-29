@@ -12,7 +12,7 @@ I want to discover new recipes with an ingredient I have on hand
 
 So that I make delicious food and a cocktail to enjoy
 
-## Acceptance Criteria **need to make sure this is actually what will/is happening**
+## Acceptance Criteria 
 
 Given I am a user that wants to find food and cocktail recipes
 
@@ -30,11 +30,27 @@ When I click on a favorited recipe
 
 Then I am again presented with the recipe ingredients and directions to make it
 
-## Installation **add in link once deployed**
+## Installation 
 
 To use, click on the link: 
 
 ## Usage
+
+Once page loaded, enter a meal ingredient you have on hand in the meal search box, click search
+![Wine & Dine load screen]![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_31_43 PM](https://user-images.githubusercontent.com/106408898/204439576-00488282-3c83-4610-b5b5-0dde8b3e7894.png)
+
+Then you can enter a cocktail ingredient you have on hand in the cocktail search box, click search
+![Cocktail Section] ![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_32_01 PM](https://user-images.githubusercontent.com/106408898/204439568-3d3295e0-5063-4ea8-890e-1eef1867d91a.png)
+
+If you liked the recipes that generate, click on the favorite star, which will save the recipe in the favorites section
+
+
+You can then reload the favorited receipes to make again
+
+
+The navagation bar at the top will move to each section of the page
+
+
 
 ## Credits
 
@@ -70,12 +86,5 @@ All: Concept design
 
 Build out of searched recipes to do a weekly meal plan
 
-
-
-
-![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_31_43 PM](https://user-images.githubusercontent.com/106408898/204439576-00488282-3c83-4610-b5b5-0dde8b3e7894.png)
-
-
-![Meal and Cocktail Finder - Google Chrome 11_28_2022 9_32_01 PM](https://user-images.githubusercontent.com/106408898/204439568-3d3295e0-5063-4ea8-890e-1eef1867d91a.png)
 
   
