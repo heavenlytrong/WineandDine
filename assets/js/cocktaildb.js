@@ -501,7 +501,6 @@ cocktailBtn.on("click", function (event) {
 
 
 function getData(drink) {
-    //APIStringDrink = APIStringDrink.replace('[key]', drink);
 
     var requestOptions = {
         method: 'GET',
@@ -539,7 +538,6 @@ function extractData(staticResponseDrink, opt=0) {
 
 function getDataId(drinkId) {
     console.log(drinkId)
-    //APIStringId = APIStringId.replace('[key]', drinkId); 
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -548,7 +546,6 @@ function getDataId(drinkId) {
         .then(response => response.text())
         .then(result => extractDataId(JSON.parse(result)))
         .catch(error => console.log('error', error));
-        //console.log(APIStringId + drinkId, requestOptions)
       
 }   
 
@@ -560,7 +557,23 @@ function extractDataId(staticResponseIngredient) {
         updatedIngredients = newIngredients.join(', ');
         newMeasurements = (propertyValue.slice(32,47));
         instructions = propertyValue[9];
-        ingredientsArray = []
+        ingredientsArray = [];
+
+        for (let i = 1; i < 16; i++) {
+            let ingredient = ingredients["strIngredient" + i]
+            let measure = ingredients["strMeasure" + i]
+    
+            if (!ingredient) {
+                break
+            }
+            if (!measure) {
+                measure = ""
+            }
+            const ingredientObj = {ingredient,measure}
+            ingredientsArray.push(ingredientObj)
+    
+        } 
+        console.log(ingredientsArray)
     
     
 
@@ -587,10 +600,6 @@ function getDataName(drinkName) {
 }
 
 
-
-
-
-
 function displayData() {
     
     $("#cocktailIng").html('')
@@ -603,7 +612,7 @@ function displayData() {
         }
 
 
-    // document.getElementById('cocktailIng').innerHTML += "<li>" + ingredientsArray + "</li>";
+   
     
    
 
@@ -655,17 +664,7 @@ function createResultButton(drinkStr) {
 
 
 console.log(document.getElementById("favBtn"))
-//prevDrinks = JSON.parse(localStorage.getItem(['Key']))
 
-
-/*function createFavoriteButton(cocktailSaveBtn) {
-    let favoriteList = document.getElementById("searchHistory")
-    var cocktailSaveBtn = $("#cocktailFav")
-    let btnElement = document.createElement("button", id="resultBtn")
-    document.getElementById("resultBtn")
-    favoriteList.append(btnElement)
-
-}*/
 
 getData(drink);
 getDataId(drinkId);
