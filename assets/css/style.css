@@ -99,9 +99,10 @@ button {
   
   button:hover {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 15px 20px rgba(153, 179, 59, 0.4);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
     color: rgb(0, 0, 0);
     transform: translateY(-7px); 
+
     
   }
 
@@ -134,6 +135,7 @@ button {
   font-style: italic;
   font-size: large;
 }
+
 ul #cocktailMea {
   align-items: center;
   text-align: center;
@@ -145,6 +147,26 @@ ul #cocktailMea {
   font-style: italic;
   font-family: 'Bebas Neue', cursive, sans-serif;
   font-size: 50px;
+}
+
+#mealTitle {
+  text-align: center;
+  font-style: italic;
+  font-family: 'Bebas Neue', cursive, sans-serif;
+  font-size: 50px;
+}
+
+#mealIng {
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+}
+
+#mealIns {
+  text-align: center;
+  font-style: italic;
+  font-size: large;
+  align-items: center;
 }
 
 #historyBrk {
@@ -170,10 +192,44 @@ ul #cocktailMea {
    margin-left: 80%;
   }
 
-  #cocktailFav:active {
-    background-color: #000;
+  #cocktailFav:hover {
+    transform: translateX(10px) rotate(10deg) translateY(5px);
   }
-
+#favBtn:hover {
+  transform: translateX(10px) rotate(10deg) translateY(5px);
+}
 #cocktail {
   border-radius: 30px;
 }
+#meal {
+  border-radius: 30px;
+}
+
+li {
+  list-style: none;
+}
+
+#searchHistory > button {
+  background-color: white;
+  width: 600px;
+  height: 70px;
+  font-size: 30px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+#searchHistory > button:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+  color: rgb(0, 0, 0);
+  transform: translateY(-7px); 
+  border: 5px solid black;
+  font-size: 40px;
+}
+
+#searchTitle {
+  text-align: center;
+}
+
