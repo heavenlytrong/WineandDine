@@ -18,12 +18,39 @@ function getDinnerIdea(e){
         let selectedMeal = data.meals[randomIndex]
         let mealTitle = selectedMeal.strMeal;
         let mealSource = selectedMeal.strMealThumb;
+        
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${selectedMeal.idMeal}`)
         .then((response) => response.json())
         .then(data =>{
+            //let mealIns = data.meals[strInstructions];
             document.getElementById("mealTitle").innerHTML = `Meal : ${mealTitle}`
             document.getElementById("mealImg").setAttribute("src", mealSource)
-            console.log(data)
+
+           // document.getElementById("mealIns").innerHTML = "<p>" + data.meals[strInstructions] + "</p>";
+           
+          $("#mealIns").html(data.meals[0].strInstructions);
+          
+          
+          
+          for (let i = 1; i < 21; i++) {
+            let ingredientM = data.meals[0]["strIngredient" + i]
+            let measureM = data.meals[0]["strMeasure" + i]
+    console.log(ingredientM)
+    console.log(measureM)
+            if (!ingredientM) {
+                break
+            }
+            if (!measureM) {
+                measureM = ""
+            }
+            var listItem = $("<li>")
+                .text(ingredientM + " : " + measureM)
+                .addClass("card-text, ingMeas")
+            $("#mealIng").append(listItem)
+                
+        }        
+                       console.log(data)
+            
         })
         //     if (data.meals){
     //         data.meals.forEach(meal => {    

@@ -36,6 +36,22 @@ To use, click on the link:
 
 ## Usage
 
+Once page loaded, enter a meal ingredient you have on hand in the meal search box, click search
+![Wine & Dine load screen]
+
+Then you can enter a cocktail ingredient you have on hand in the cocktail search box, click search
+![Cocktail Section]
+
+If you liked the recipes that generate, click on the favorite star, which will save the recipe in the favorites section
+![Favorites Section]
+
+You can then reload the favorited receipes to make again
+![Favorite reload of recipes]
+
+The navagation bar at the top will move to each section of the page
+![Navagation Bar]
+
+
 ## Credits
 
 Jake Pedigo - JavaScript for ingredients from API
