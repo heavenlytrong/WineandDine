@@ -70,6 +70,10 @@ Deployment Link!
 
 https://heavenlytrong.github.io/WineandDine/
 
+Github Repository:
+
+https://github.com/heavenlytrong/WineandDine
+
 ## Collaborators
 
 Trong: CSS
