@@ -22,9 +22,11 @@ Then I am presented with a randomly generated food recipe and that receipe is ad
 
 When I enter a cocktail ingredient I have on hand
 
-Then I am presented with a randomly generated cocktail receipe and that recipe is added to the search history
+Then I am presented with a randomly generated cocktail receipe 
 
-When I click on a previously searched recipe
+Then I can click on the favorite star to add to the favorites list
+
+When I click on a favorited recipe
 
 Then I am again presented with the recipe ingredients and directions to make it
 
@@ -36,7 +38,7 @@ To use, click on the link:
 
 ## Credits
 
-Jake 
+Jake Pedigo - JavaScript for ingredients from API
 
 ## Technologies used
 

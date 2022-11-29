@@ -151,9 +151,14 @@ ul #cocktailMea {
   margin-top: 20px;
 }
 
-#meal {
-  border-radius: 30px;
-}
+  /*Katie added for favorite star*/
+  #favBtn {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
 
 #cocktail {
   border-radius: 30px;
