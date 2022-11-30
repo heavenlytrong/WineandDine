@@ -66,7 +66,6 @@ function getDinnerIdea(e){
 function getMeal(e){
     e.preventDefault();
     if(e.target.classList.contains('searchBtnMeal')) {
-        document.getElementById('#mealIng').innerHTML = "Recipe Ingredients"
         let mealItem = e.target.parentElement.parentElement
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
