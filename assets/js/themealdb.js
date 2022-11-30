@@ -38,8 +38,7 @@ function getDinnerIdea(e){
            // document.getElementById("mealIns").innerHTML = "<p>" + data.meals[strInstructions] + "</p>";
            
           $("#mealIns").html(data.meals[0].strInstructions);
-          
-          
+          $("#mealIng").html("Recipe Ingredients: ")
           
           for (let i = 1; i < 21; i++) {
             let ingredientM = data.meals[0]["strIngredient" + i]
@@ -66,7 +65,8 @@ function getDinnerIdea(e){
 }
 function getMeal(e){
     e.preventDefault();
-    if(e.target.classList.contains('searchBtnMeal')){
+    if(e.target.classList.contains('searchBtnMeal')) {
+        document.getElementById('#mealIng').innerHTML = "Recipe Ingredients"
         let mealItem = e.target.parentElement.parentElement
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
