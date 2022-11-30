@@ -490,9 +490,15 @@ cocktailBtn.on("click", function (event) {
     document.getElementById('cocktailIns').innerHTML = "Instructions:";
     document.getElementById('cocktailImg').src = "";
     document.getElementById('cocktailIng').innerHTML
-
+    
 
     var drink = $("#cocktail").val();
+    if (drink == "") {
+        drinks = ["vodka", "gin", "rum", "tequila", "whiskey", "sugar", "water", "peach vodka", "cognac", "red wine"]
+        drink = drinks[Math.floor(Math.random() * drinks.length)]
+        
+    } 
+
     console.log($("#cocktail").val());
     getData(drink)
     $("#cocktail").val('');
