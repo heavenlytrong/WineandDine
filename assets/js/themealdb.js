@@ -146,3 +146,10 @@ mealBtn.addEventListener('click', getDinnerIdea);
 // recipeCloseBtn.addEventListener('click', () => {
 //     content.parentElement.classList.remove('show recipe');
 // });
+
+prevMeals = JSON.parse(localStorage.getItem("meals"));
+if(prevMeals != null) {
+    for (let i = 0; i < prevMeals.length; i++) {
+        createResultMealButton(prevMeals[i])
+    }
+}
