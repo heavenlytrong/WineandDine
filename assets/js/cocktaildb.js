@@ -645,7 +645,7 @@ cocktailSaveBtn.on("click", function (event) {
 
 function createResultButton(drinkStr) {
     var favList = document.getElementById('searchHistory');
-    var newButton = document.createElement('button', id='favBtn') 
+    var newButton = document.createElement('button', id='faveBtn') 
     favList.append(newButton);
     newButton.innerText = drinkStr;
 
@@ -663,7 +663,7 @@ function createResultButton(drinkStr) {
 
 
 
-console.log(document.getElementById("favBtn"))
+console.log(document.getElementById("faveBtn"))
 
 
 getData(drink);
