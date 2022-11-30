@@ -104,7 +104,43 @@ ingredient.parentElement.classList.add('Show Recipe')
 
 }
 
+var mealSaveBtn = $("#favBtn")
+mealSaveBtn.on("click", function (event) {
+    console.log(mealTitle.innerText.slice(7))
+    let mealTitles = mealTitle.innerText.slice(7)
+    let prevMeals = localStorage.getItem("meals");
+    if (prevMeals != null) {
+        prevMeals = JSON.parse(prevMeals)
+        if(!prevMeals.includes(String(mealTitles).toLowerCase())) {
+            prevMeals.push(String(mealTitles).toLowerCase());
+            createResultMealButton(String(mealTitles).toLowerCase());
+        }
+        localStorage.setItem("meals", JSON.stringify(prevMeals))
+    } else {
+        prevMeals = []
+        prevMeals.push(String(mealTitles).toLowerCase())
+        createResultMealButton(String(mealTitles).toLowerCase());
+        localStorage.setItem("meals", JSON.stringify(prevMeals))
+    }
+})
+    function createResultMealButton(mealTitle) {
+        var favList = document.getElementById('searchHistory');
+        var newButton = document.createElement('button', id='faveBtn') 
+        favList.append(newButton);
+        newButton.innerText = mealTitle;
+    
+        newButton.addEventListener('click', () => {
+            event.preventDefault
+            document.getElementById('mealTitle').innerHTML = "Meal:";
+            $("#mealIng").html('')
+            document.getElementById('mealIns').innerHTML = "Instructions:";
+            document.getElementById('mealImg').src = "";
+            document.getElementById('mealIng').innerHTML
+            //getDataMealName(newButton.innerText)
+        })
+    }
 
+    
 mealBtn.addEventListener('click', getDinnerIdea);
 // ingredient.addEventListener('click', getMealByID);
 // recipeCloseBtn.addEventListener('click', () => {
